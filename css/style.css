@@ -46,3 +46,18 @@ select {
     font-size: 130%;
     padding: 10px;
 }
+
+#finish {
+    float: right;
+    width: 300px;
+}
+
+.ship {
+    display: block;
+    width: 200px;
+}
+
+#process {
+    height: 25px;
+
+}

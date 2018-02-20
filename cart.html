@@ -9,5 +9,31 @@
     <nav>
       <a href='index.html'>Continue Shopping</a>
     </nav>
+    <div id='list'>
+      <p>Order:</p>
+        <ul id='purchase-items'></ul>
+    </div>
+    <form id='finish'>
+      <fieldset>
+        <legend>Shipping Information:</legend>
+        <label for = 'name'>Name:</label>
+        <input name = 'name' type = 'text' class = 'ship'>
+        <label for = 'address'>Address:</label>
+        <input name = 'address' type = 'text' class = 'ship'>
+        <input name = 'address' type = 'text' class = 'ship'>
+        <label for = 'city'>City:</label>
+        <input name = 'city' type = 'text' class = 'ship'>
+        <label for = 'state'>State:</label>
+        <input name = 'state' type = 'text' class = 'ship'>
+        <label for = 'zip'>Zip:</label>
+        <input name = 'zip' type = 'text' class = 'ship'>
+        <label for = 'phone'>Phone Number:</label>
+        <input name = 'phone' type = 'text' class = 'ship'>
+        <label for = 'cc'>Credit Card Information:</label>
+        <input name = 'cc' type = 'number' maxlength="16" class = 'ship'/>
+        <!-- <br></br> -->
+        <button type = 'submit' id = 'process'>Process Order</button>
+      </fieldset>
+    </form>
   </body>
 </html>

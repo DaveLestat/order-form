@@ -8,9 +8,9 @@ var saleProducts = [];
 
 
 //constructor
-function Product(name) {
+function Product(name, path) {
   this.name = name;
-  // this.path = path;
+  this.path = path;
   saleProducts.push(this);
 }
 
@@ -38,7 +38,7 @@ addNewProduct();
 
 console.log(saleProducts);
 
-//populate dropdown menu
+// populate dropdown menu
 function addOption(selectbox,text,value )
 {
   var optn = document.createElement('OPTION');
@@ -47,11 +47,15 @@ function addOption(selectbox,text,value )
   selectbox.options.add(optn);
 }
 
-function shopProduct(){
-  var productOptions = new Array('bag','banana','bathroom','boots','breakfast','bubblegum','chair','chultu','dog duck','dragon','pen','pet', 'tauntaun','unicorn','usb','water-can', 'wine glass');
 
-  for (var i=0; i < productOptions.length;++i){
-    addOption(document.drop_list.Shop_Product, productOptions[i], productOptions[i]);
+function shopProduct(){
+  var productOptions = [];
+
+  for(var i = 0; i < saleProducts.length; i++) {
+    productOptions.push(saleProducts[i].name);
   }
 
+  for (var k=0; k < productOptions.length;++k){
+    addOption(document.drop_list.Shop_Product, productOptions[k], productOptions[k]);
+  }
 }
