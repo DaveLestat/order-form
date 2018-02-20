@@ -6,9 +6,9 @@
     <title>BUS MALL</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.js"></script>
+    <script src="js/app.js"></script>
 </head>
-<body>
+<body onLoad="shopProduct()";>
     <h1>Buss Mall Products</h1>
     <nav>
         <ul>
@@ -17,6 +17,12 @@
             <li><a href='about.html' target="_blank">About Us</a></li>
         </ul>
     </nav>
-    
+    <form name="drop_list" action="yourpage.php" method="POST" >
+        <h2>Select Product you wish to Purchase:</h2>
+        <select name="Shop_Product">
+            <Option value="" >Products</option>
+        </select>
+    </form>
 </body>
 </html>
+

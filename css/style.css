@@ -11,6 +11,7 @@ h1 {
     padding: 10px;
     color: rgb(156, 177, 159);
     margin-top: 0px;
+    font-family: fantasy;
 }
 
 h1 :last-child{
@@ -34,4 +35,14 @@ p {
 img {
     width: 240px;
     margin: 25px;
+}
+
+form {
+    width: 600px;
+    margin-left: 200px;
+}
+
+select {
+    font-size: 130%;
+    padding: 10px;
 }
