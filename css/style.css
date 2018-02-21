@@ -8,10 +8,16 @@
 h1 {
     text-align: center;
     background-color: #3a4e4b;
-    padding: 10px;
+    padding: auto;
     color: rgb(156, 177, 159);
     margin-top: 0px;
     font-family: fantasy;
+    font-size: 50px;
+    height: 75px;
+}
+
+nav ul li{
+    display: inline-block;
 }
 
 h1 :last-child{
