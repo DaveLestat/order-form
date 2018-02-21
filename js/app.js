@@ -4,9 +4,6 @@
 
 var saleProducts = [];
 
-
-
-
 //constructor
 function Product(name, path) {
   this.name = name;
@@ -16,7 +13,7 @@ function Product(name, path) {
 
 //adding-product  objects
 function addNewProduct() {
-  new Product('bag', 'img/bag.jpg'),
+  new Product('bag', '../img/bag.jpg'),
   new Product('banana', 'img/banana.jpg'),
   new Product('bathroom', 'img/bathroom.jpg'),
   new Product('boots', 'img/boots.jpg'),
@@ -40,6 +37,7 @@ console.log(saleProducts);
 
 // set global variables
 var productOptions = [];
+var cartProducts = [];
 var btn = document.getElementById('btn');
 var qty = document.getElementById('qty');
 
@@ -48,7 +46,7 @@ function addOption(selectbox,text,value )
 {
   var optn = document.createElement('OPTION');
   optn.text = text;
-  optn.value = value;
+  // optn.value = value;
   selectbox.options.add(optn);
 }
 
@@ -59,8 +57,16 @@ function shopProduct(){
   }
 
   for (var k=0; k < productOptions.length;++k){
-    addOption(document.drop_list.Shop_Product, productOptions[k], productOptions[k]);
+    addOption(document.drop_list.Shop_Product, productOptions[k]);
   }
+}
+
+// Constructor function for products in cart
+function InCart(name, path, qty) {
+  this.name = name;
+  this.path = path;
+  this.qty = qty;
+  cartProducts.push(this);
 }
 
 // set local storage for shopping cart
@@ -69,3 +75,18 @@ if(localStorage.cart) {
 } else {
   cart = [];
 }
+
+// function to store data into local storage\
+
+new InCart('bag', '../img/bag.jpg', 3);
+
+var dList = document.getElementById('drop');
+
+function handleCartAdd(event) {
+  event.preventDefault();
+  var buyProduct = event.target.option.value;
+  var prodImage = event.target.option.value;
+  var prodQty = parseInt(event.target.quantity.value);
+  new InCart(buyProduct, prodImage, prodQty);
+}
+dList.addEventListener('submit', handleCartAdd);
