@@ -38,6 +38,11 @@ addNewProduct();
 
 console.log(saleProducts);
 
+// set global variables
+var productOptions = [];
+var btn = document.getElementById('btn');
+var qty = document.getElementById('qty');
+
 // populate dropdown menu
 function addOption(selectbox,text,value )
 {
@@ -47,9 +52,7 @@ function addOption(selectbox,text,value )
   selectbox.options.add(optn);
 }
 
-
 function shopProduct(){
-  var productOptions = [];
 
   for(var i = 0; i < saleProducts.length; i++) {
     productOptions.push(saleProducts[i].name);
@@ -58,4 +61,11 @@ function shopProduct(){
   for (var k=0; k < productOptions.length;++k){
     addOption(document.drop_list.Shop_Product, productOptions[k], productOptions[k]);
   }
+}
+
+// set local storage for shopping cart
+if(localStorage.cart) {
+  var cart = localStorage.cart.split(',');
+} else {
+  cart = [];
 }
